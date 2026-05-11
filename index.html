@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meridian | Luxury Real Estate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">MERIDIAN</div>
+    <ul class="nav__links">
+      <li><a href="#listings">Properties</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav__cta">Book a Consultation</a>
+    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#listings" class="menu-link">Properties</a></li>
+      <li><a href="#about" class="menu-link">About</a></li>
+      <li><a href="#services" class="menu-link">Services</a></li>
+      <li><a href="#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grain"></div>
+      <div class="hero__overlay"></div>
+      <!-- Abstract architectural lines -->
+      <svg class="hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <line x1="0" y1="900" x2="600" y2="0" stroke="rgba(212,180,131,0.12)" stroke-width="1"/>
+        <line x1="200" y1="900" x2="800" y2="0" stroke="rgba(212,180,131,0.08)" stroke-width="1"/>
+        <line x1="1440" y1="0" x2="900" y2="900" stroke="rgba(212,180,131,0.1)" stroke-width="1"/>
+        <line x1="1240" y1="0" x2="700" y2="900" stroke="rgba(212,180,131,0.06)" stroke-width="1"/>
+        <circle cx="1100" cy="200" r="300" fill="none" stroke="rgba(212,180,131,0.05)" stroke-width="1"/>
+        <circle cx="1100" cy="200" r="200" fill="none" stroke="rgba(212,180,131,0.04)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Mumbai · Delhi · Bengaluru</p>
+      <h1 class="hero__title reveal">
+        Where Homes<br/><em>Become Legacies</em>
+      </h1>
+      <p class="hero__sub reveal">Curated luxury properties for the discerning few. <br/>We don't just sell homes — we place lives.</p>
+      <div class="hero__actions reveal">
+        <a href="#listings" class="btn btn--gold">Explore Properties</a>
+        <a href="#contact" class="btn btn--ghost">Talk to an Agent</a>
+      </div>
+    </div>
+    <div class="hero__stats reveal">
+      <div class="stat"><span class="stat__num" data-target="340">0</span><span>+</span><p>Properties Sold</p></div>
+      <div class="stat__divider"></div>
+      <div class="stat"><span class="stat__num" data-target="12">0</span><span>+</span><p>Years Experience</p></div>
+      <div class="stat__divider"></div>
+      <div class="stat"><span class="stat__num" data-target="98">0</span><span>%</span><p>Client Satisfaction</p></div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <section class="search-bar">
+    <div class="search-bar__inner">
+      <div class="search-field">
+        <label>Location</label>
+        <select id="searchLocation">
+          <option value="">Any City</option>
+          <option>Mumbai</option>
+          <option>Delhi NCR</option>
+          <option>Bengaluru</option>
+          <option>Pune</option>
+          <option>Hyderabad</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Type</label>
+        <select id="searchType">
+          <option value="">Any Type</option>
+          <option>Apartment</option>
+          <option>Villa</option>
+          <option>Penthouse</option>
+          <option>Plot</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Budget</label>
+        <select id="searchBudget">
+          <option value="">Any Price</option>
+          <option>Under ₹1 Cr</option>
+          <option>₹1 Cr – ₹3 Cr</option>
+          <option>₹3 Cr – ₹5 Cr</option>
+          <option>₹5 Cr+</option>
+        </select>
+      </div>
+      <button class="btn btn--gold search-bar__btn" id="searchBtn">Search</button>
+    </div>
+  </section>
+
+  <!-- FEATURED LISTINGS -->
+  <section class="listings" id="listings">
+    <div class="section-header">
+      <p class="section-eyebrow">Featured Properties</p>
+      <h2 class="section-title">Handpicked Residences</h2>
+    </div>
+
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="Apartment">Apartments</button>
+      <button class="filter-tab" data-filter="Villa">Villas</button>
+      <button class="filter-tab" data-filter="Penthouse">Penthouses</button>
+    </div>
+
+    <div class="listings__grid" id="listingsGrid">
+      <!-- JS-generated -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__image-col">
+      <div class="about__img-frame">
+        <div class="about__img-placeholder">
+          <svg viewBox="0 0 400 520" fill="none">
+            <rect width="400" height="520" fill="url(#aboutGrad)"/>
+            <defs>
+              <linearGradient id="aboutGrad" x1="0" y1="0" x2="400" y2="520" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1a1208"/>
+                <stop offset="1" stop-color="#2e2010"/>
+              </linearGradient>
+            </defs>
+            <!-- Architectural illustration -->
+            <rect x="80" y="160" width="240" height="300" fill="none" stroke="#d4b483" stroke-width="1" opacity="0.4"/>
+            <rect x="100" y="180" width="200" height="260" fill="none" stroke="#d4b483" stroke-width="0.5" opacity="0.3"/>
+            <line x1="80" y1="160" x2="180" y2="80" stroke="#d4b483" stroke-width="0.5" opacity="0.4"/>
+            <line x1="320" y1="160" x2="220" y2="80" stroke="#d4b483" stroke-width="0.5" opacity="0.4"/>
+            <line x1="180" y1="80" x2="220" y2="80" stroke="#d4b483" stroke-width="0.5" opacity="0.4"/>
+            <rect x="160" y="340" width="80" height="120" fill="#d4b483" opacity="0.08"/>
+            <rect x="100" y="220" width="55" height="60" fill="#d4b483" opacity="0.08"/>
+            <rect x="245" y="220" width="55" height="60" fill="#d4b483" opacity="0.08"/>
+            <rect x="100" y="300" width="55" height="60" fill="#d4b483" opacity="0.08"/>
+            <rect x="245" y="300" width="55" height="60" fill="#d4b483" opacity="0.08"/>
+          </svg>
+        </div>
+        <div class="about__badge">
+          <span class="about__badge-num">12</span>
+          <span class="about__badge-text">Years of Excellence</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__text-col">
+      <p class="section-eyebrow">Who We Are</p>
+      <h2 class="section-title">Real Estate, Reimagined</h2>
+      <p class="about__body">At Meridian, we believe that buying a home is one of the most personal decisions you'll ever make. We pair deep market intelligence with genuine human relationships — no rush, no pressure, just the right fit.</p>
+      <p class="about__body">Our team of 25 specialists covers luxury, residential, and commercial portfolios across India's top metros, with an average of 8 years of hyper-local experience each.</p>
+      <div class="about__pillars">
+        <div class="pillar">
+          <div class="pillar__icon">◈</div>
+          <div>
+            <h4>Curated Portfolio</h4>
+            <p>Every listing is vetted by our in-house team before it reaches you.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar__icon">◈</div>
+          <div>
+            <h4>End-to-End Support</h4>
+            <p>From site visits to legal documentation — we're with you throughout.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar__icon">◈</div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden fees, no surprise charges. Just honest numbers.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn--gold">Meet Our Team</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-card">
+        <div class="service-card__icon">⌂</div>
+        <h3>Residential Sales</h3>
+        <p>Luxury apartments, villas, and independent homes across prime locations. Personalised search to closing.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">◎</div>
+        <h3>Property Rentals</h3>
+        <p>Short-term and long-term rental solutions for urban professionals, families, and NRIs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">▣</div>
+        <h3>Commercial Real Estate</h3>
+        <p>Office spaces, retail units, and warehousing — backed by our commercial advisory desk.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">◆</div>
+        <h3>Investment Advisory</h3>
+        <p>ROI-focused guidance on pre-launch projects, REITs, and emerging micro-markets.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">⊕</div>
+        <h3>NRI Services</h3>
+        <p>Dedicated NRI desk handling legal, financial, and property management needs remotely.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">✦</div>
+        <h3>Interior & Staging</h3>
+        <p>Partner network for interior design and pre-sale staging to maximise your property value.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <p class="section-eyebrow">Client Stories</p>
+      <h2 class="section-title">Voices of Trust</h2>
+    </div>
+    <div class="testimonials__track" id="testimonialTrack">
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">"Meridian found us a penthouse we didn't even know existed. The process was elegant from start to finish — exactly like them."</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">RK</div>
+          <div>
+            <strong>Rohit Kapoor</strong>
+            <span>Purchased in Bandra West, Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">"As an NRI, I was nervous about buying remotely. The Meridian team handled everything — I never once felt out of the loop."</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">PS</div>
+          <div>
+            <strong>Priya Sharma</strong>
+            <span>Purchased in Whitefield, Bengaluru</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">"They sold my old apartment in 18 days at a price above my ask. I've worked with three agencies before — none came close to this."</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">AM</div>
+          <div>
+            <strong>Aditya Mehta</strong>
+            <span>Sold in Golf Course Road, Gurugram</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">"The investment advisory team identified a pre-launch project that's already appreciated 28% in 14 months. Game-changing advice."</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">SN</div>
+          <div>
+            <strong>Sneha Nair</strong>
+            <span>Investor, Pune & Hyderabad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials__dots" id="testimonialDots"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact__left">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Start Your<br/><em>Journey Today</em></h2>
+      <p class="contact__sub">Whether you're buying, selling, or simply exploring — our agents are ready to guide you with zero obligation.</p>
+      <div class="contact__info">
+        <div class="contact__info-item">
+          <span class="contact__info-icon">✉</span>
+          <span>hello@meridianrealty.in</span>
+        </div>
+        <div class="contact__info-item">
+          <span class="contact__info-icon">✆</span>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="contact__info-item">
+          <span class="contact__info-icon">◎</span>
+          <span>14th Floor, One BKC, Mumbai 400051</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact__right">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="fname" placeholder="Arjun Verma" required/>
+            <span class="form-error" id="fnameError"></span>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="fphone" placeholder="+91 98765 43210" required/>
+            <span class="form-error" id="fphoneError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="femail" placeholder="arjun@example.com" required/>
+          <span class="form-error" id="femailError"></span>
+        </div>
+        <div class="form-group">
+          <label>I'm interested in</label>
+          <select id="finterest">
+            <option>Buying a property</option>
+            <option>Selling a property</option>
+            <option>Renting</option>
+            <option>Investment advice</option>
+            <option>NRI Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="fmessage" rows="4" placeholder="Tell us about what you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold btn--full">Send Message</button>
+        <div class="form-success" id="formSuccess">
+          ✦ Thank you! We'll be in touch within 24 hours.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">MERIDIAN</div>
+        <p>Curated luxury real estate across India's finest cities. Trusted by over 340 families.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Properties</h5>
+        <ul>
+          <li><a href="#">Mumbai Listings</a></li>
+          <li><a href="#">Delhi NCR</a></li>
+          <li><a href="#">Bengaluru</a></li>
+          <li><a href="#">Pune & Hyderabad</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Follow Us</h5>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Meridian Realty Pvt. Ltd. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Use · RERA Reg. No. MH/RERA/A51900000001</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
